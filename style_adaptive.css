@@ -49,15 +49,12 @@ body {
 
 .hero::before {
   content: "";
-  background: url('images/team_ELC.png') no-repeat center center;
-  background-size: cover;
+  background: url('images/team_ELC.png') center center / cover no-repeat;
   opacity: 0.15;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 0;
+  max-height: 600px;
 }
 
 .hero-content {
