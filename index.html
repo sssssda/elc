@@ -158,7 +158,9 @@ header img {
   padding-left: 0px;
 }
 
-  .form-container input {
+  .form-container input::placeholder {
+    color: #999999;
+    opacity: 1;
     width: 100%;
     padding: 14px 16px;
     font-size: 18px;
@@ -238,7 +240,7 @@ header img {
     <h2>Запишитесь на 1 бесплатный урок<br>+консультация</h2>
     <form id="tg-form">
       <input type="text" id="name" placeholder="Имя" required />
-      <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" value="+7 " required />
+      <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required />
       <button type="submit">Хочу на 1 бесплатный урок</button>
     </form>
   </div>
