@@ -254,21 +254,22 @@
       <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required />
       <button type="submit">Хочу на 1 бесплатный урок</button>
     </form>
-  </div> <section class="consultation">
+  </div>
+<section class="consultation">
   <h2 class="consultation__title">Что будет на консультации?</h2>
 
   <div class="consultation__item">
     <p class="consultation__step">1. Определим ваш уровень английского</p>
     <div class="consultation__levels">
-      <div class="level rotate-1">
+      <div class="level level--beginner">
         <img src="images/bag_emoji.png" alt="Beginner">
         <span>Beginner</span>
       </div>
-      <div class="level rotate-2">
+      <div class="level level--elementary">
         <img src="images/climbing_emoji.png" alt="Elementary">
         <span>Elementary</span>
       </div>
-      <div class="level rotate-3">
+      <div class="level level--intermediate">
         <img src="images/intermediate.png" alt="Intermediate">
         <span>Intermediate</span>
       </div>
@@ -280,7 +281,6 @@
     <div class="consultation__progress">
       <img src="images/flag_icon.png" class="start-icon" alt="flag">
       <div class="progress-line">
-        <div class="progress-bar"></div>
         <span class="dot green"></span>
         <span class="dot blue"></span>
         <span class="dot blue"></span>
@@ -292,19 +292,21 @@
 
   <div class="consultation__item">
     <p class="consultation__step">3. Поможем выбрать цель</p>
-    <img src="images/mountain_emoji.png" alt="Цель" class="mountain-img">
+    <div class="goal">
+      <img src="images/mountain_emoji.png" alt="Цель" class="mountain-img">
+    </div>
   </div>
 </section>
 
 <style>
   .consultation {
     padding: 32px 20px;
-    background: #f7f7f7;
+    background: #f4f4f4;
   }
 
   .consultation__title {
     font-family: 'Gilroy Bold', sans-serif;
-    font-size: 25px;
+    font-size: 23px;
     margin-bottom: 28px;
     white-space: nowrap;
   }
@@ -326,6 +328,7 @@
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .level {
@@ -343,16 +346,14 @@
     height: 20px;
   }
 
-  .rotate-1 {
-    transform: rotate(-8deg);
+  .level--beginner {
+    transform: rotate(-6deg) translateY(8px);
   }
-
-  .rotate-2 {
-    transform: rotate(4deg);
+  .level--elementary {
+    transform: rotate(2deg) translateY(-4px);
   }
-
-  .rotate-3 {
-    transform: rotate(-6deg);
+  .level--intermediate {
+    transform: rotate(8deg) translateY(-8px);
   }
 
   .consultation__progress {
@@ -368,40 +369,28 @@
   }
 
   .avatar-icon {
-    height: 32px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     position: absolute;
-    left: 56px;
-    top: -10px;
-    z-index: 2;
+    left: 42px;
+    top: -12px;
   }
 
   .progress-line {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 26px;
     flex: 1;
+    padding: 0 16px;
     position: relative;
-    height: 10px;
-  }
-
-  .progress-bar {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 3px;
-    width: 100%;
-    background: linear-gradient(to right, #72e375 20%, #b4c4de 20%);
-    z-index: 0;
   }
 
   .dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    z-index: 1;
+    z-index: 2;
   }
 
   .green {
@@ -412,9 +401,26 @@
     background: #8ca9d7;
   }
 
-  .mountain-img {
-    height: 64px;
+  .consultation__item .progress-line::before {
+    content: "";
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(to right, #72e375 25%, #b4c4de 25%);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .goal {
+    display: flex;
+    justify-content: flex-end;
     margin-top: 12px;
+  }
+
+  .mountain-img {
+    height: 76px;
   }
 </style>
   <script src="https://unpkg.com/imask"></script>
