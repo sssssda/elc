@@ -260,15 +260,15 @@
   <div class="consultation__item">
     <p class="consultation__step">1. Определим ваш уровень английского</p>
     <div class="consultation__levels">
-      <div class="level">
+      <div class="level rotate-1">
         <img src="images/bag_emoji.png" alt="Beginner">
         <span>Beginner</span>
       </div>
-      <div class="level">
+      <div class="level rotate-2">
         <img src="images/climbing_emoji.png" alt="Elementary">
         <span>Elementary</span>
       </div>
-      <div class="level">
+      <div class="level rotate-3">
         <img src="images/intermediate.png" alt="Intermediate">
         <span>Intermediate</span>
       </div>
@@ -280,6 +280,7 @@
     <div class="consultation__progress">
       <img src="images/flag_icon.png" class="start-icon" alt="flag">
       <div class="progress-line">
+        <div class="progress-bar"></div>
         <span class="dot green"></span>
         <span class="dot blue"></span>
         <span class="dot blue"></span>
@@ -305,6 +306,7 @@
     font-family: 'Gilroy Bold', sans-serif;
     font-size: 25px;
     margin-bottom: 28px;
+    white-space: nowrap;
   }
 
   .consultation__item {
@@ -341,6 +343,18 @@
     height: 20px;
   }
 
+  .rotate-1 {
+    transform: rotate(-8deg);
+  }
+
+  .rotate-2 {
+    transform: rotate(4deg);
+  }
+
+  .rotate-3 {
+    transform: rotate(-6deg);
+  }
+
   .consultation__progress {
     display: flex;
     align-items: center;
@@ -357,22 +371,37 @@
     height: 32px;
     border-radius: 50%;
     position: absolute;
-    left: 40px;
-    top: -6px;
+    left: 56px;
+    top: -10px;
+    z-index: 2;
   }
 
   .progress-line {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
     flex: 1;
-    padding: 0 16px;
+    position: relative;
+    height: 10px;
+  }
+
+  .progress-bar {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(to right, #72e375 20%, #b4c4de 20%);
+    z-index: 0;
   }
 
   .dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
+    z-index: 1;
   }
 
   .green {
@@ -381,19 +410,6 @@
 
   .blue {
     background: #8ca9d7;
-  }
-
-  .consultation__item .progress-line::before {
-    content: "";
-    height: 3px;
-    flex: 1;
-    background: linear-gradient(to right, #72e375 25%, #b4c4de 25%);
-    position: absolute;
-    left: 58px;
-    right: 60px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 0;
   }
 
   .mountain-img {
