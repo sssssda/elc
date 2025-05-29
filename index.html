@@ -1,195 +1,262 @@
-<style>
-  @font-face {
-    font-family: 'Gilroy Regular';
-    src: url('Gilroy-Regular.ttf') format('truetype');
-  }
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ELC | Быстрый английский</title>
 
-  @font-face {
-    font-family: 'Gilroy Semibold';
-    src: url('Gilroy-Semibold.ttf') format('truetype');
-  }
+  <!-- Шрифты Gilroy -->
+  <style>
+    @font-face {
+      font-family: 'Gilroy Regular';
+      src: url('fonts/Gilroy-Regular.ttf') format('truetype');
+    }
 
-  @font-face {
-    font-family: 'Gilroy Bold';
-    src: url('Gilroy-Bold.ttf') format('truetype');
-  }
+    @font-face {
+      font-family: 'Gilroy Semibold';
+      src: url('fonts/Gilroy-Semibold.ttf') format('truetype');
+    }
 
-  body {
-    margin: 0;
-    font-family: 'Gilroy Regular', sans-serif;
-    background-color: #ffffff;
-    -webkit-font-smoothing: antialiased;
-  }
+    @font-face {
+      font-family: 'Gilroy Bold';
+      src: url('fonts/Gilroy-Bold.ttf') format('truetype');
+    }
 
-  header {
-    background-color: white;
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-  }
+    body {
+      margin: 0;
+      font-family: 'Gilroy Regular', sans-serif;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  header img {
-    height: 68px;
-  }
+    header {
+      background-color: white;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+    }
 
-  .hero {
-    position: relative;
-    background-color: #2184f9;
-    overflow: hidden;
-    padding: 40px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 600px;
-  }
+    header img {
+      height: 68px;
+    }
 
-  .hero::before {
-    content: "";
-    background: url('images/hero_bg.png') no-repeat center center;
-    background-size: cover;
-    opacity: 0.25;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-  }
-
-  .hero__overlay {
-    position: relative;
-    z-index: 1;
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-  }
-
-  .hero__badges {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
-  }
-
-  .badge {
-    background-color: rgba(255, 255, 255, 0.15);
-    padding: 8px 14px;
-    border-radius: 16px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    font-family: 'Gilroy Regular', sans-serif;
-  }
-
-  .badge img {
-    height: 18px;
-    margin-right: 6px;
-  }
-
-  .logo-2gis {
-    height: 18px;
-    margin-left: 6px;
-  }
-
-  h1 {
-    font-size: 42px;
-    font-weight: 800;
-    margin-bottom: 24px;
-    color: #fff;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-    font-family: 'Gilroy Bold', sans-serif;
-  }
-
-  .hero__features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-width: 640px;
-  }
-
-  .hero__features li {
-    font-size: 18px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    color: white;
-    line-height: 1.4;
-    letter-spacing: -0.2px;
-    font-family: 'Gilroy Regular', sans-serif;
-  }
-
-  .hero__features li img {
-    height: 20px;
-    margin-right: 10px;
-  }
-
-  .form-container {
-    max-width: 500px;
-    margin: -30px auto 80px;
-    background: white;
-    border-radius: 24px;
-    padding: 32px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    z-index: 3;
-    position: relative;
-  }
-
-  .form-container h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    color: #222;
-    text-align: center;
-    line-height: 1.4;
-    font-family: 'Gilroy Semibold', sans-serif;
-  }
-
-  .form-container input {
-    width: 100%;
-    padding: 14px 16px;
-    font-size: 16px;
-    margin-bottom: 16px;
-    border: none;
-    border-radius: 12px;
-    background: #f2f2f2;
-    box-sizing: border-box;
-    font-family: 'Gilroy Regular', sans-serif;
-  }
-
-  .form-container button {
-    width: 100%;
-    padding: 14px;
-    background: #F6C343;
-    color: black;
-    font-size: 16px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 700;
-    font-family: 'Gilroy Semibold', sans-serif;
-  }
-
-  @media (max-width: 768px) {
     .hero {
-      height: auto;
+      position: relative;
+      background-color: #2184f9;
+      overflow: hidden;
       padding: 40px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 600px;
     }
-    .hero::before {
-      background-position: center top;
-      background-size: cover;
-      opacity: 0.2;
-    }
-    h1 {
-      font-size: 30px;
-    }
-    .hero__features li {
-      font-size: 16px;
-    }
-  }
-</style>
 
+    .hero::before {
+      content: "";
+      background: url('images/hero_bg.png') no-repeat center center;
+      background-size: cover;
+      opacity: 0.25;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+
+    .hero__overlay {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .hero__badges {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 8px 14px;
+      border-radius: 16px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-family: 'Gilroy Regular', sans-serif;
+    }
+
+    .badge img {
+      height: 18px;
+      margin-right: 6px;
+    }
+
+    .logo-2gis {
+      height: 18px;
+      margin-left: 6px;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      font-family: 'Gilroy Bold', sans-serif;
+    }
+
+    .hero__features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-width: 640px;
+    }
+
+    .hero__features li {
+      font-size: 18px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      color: white;
+      line-height: 1.4;
+      letter-spacing: -0.2px;
+      font-family: 'Gilroy Regular', sans-serif;
+    }
+
+    .hero__features li img {
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: -30px auto 80px;
+      background: white;
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      z-index: 3;
+      position: relative;
+    }
+
+    .form-container h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #222;
+      text-align: center;
+      line-height: 1.4;
+      font-family: 'Gilroy Semibold', sans-serif;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 16px;
+      margin-bottom: 16px;
+      border: none;
+      border-radius: 12px;
+      background: #f2f2f2;
+      box-sizing: border-box;
+      font-family: 'Gilroy Regular', sans-serif;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 14px;
+      background: #F6C343;
+      color: black;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      font-family: 'Gilroy Semibold', sans-serif;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        height: auto;
+        padding: 40px 24px;
+      }
+      .hero::before {
+        background-position: center top;
+        background-size: cover;
+        opacity: 0.2;
+      }
+      h1 {
+        font-size: 30px;
+      }
+      .hero__features li {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/ELC_logo.png" alt="ELC Logo">
+  </header>
+  <section class="hero">
+    <div class="hero__overlay">
+      <div class="hero__badges">
+        <div class="badge">
+          <img src="images/heart_icon.png" alt="Heart">
+          <span>10.000+ выпускников</span>
+        </div>
+        <div class="badge">
+          <img src="images/star_icon.png" alt="Star">
+          <span>4.9 из 5</span>
+          <img src="images/2GIS_logo.png" alt="2GIS" class="logo-2gis">
+        </div>
+      </div>
+      <h1>Быстрый английский<br>за 2 месяца</h1>
+      <ul class="hero__features">
+        <li><img src="images/lightning_icon.png" alt="">Гарантия результата: +1 уровень за 2 месяца</li>
+        <li><img src="images/lightning_icon.png" alt="">Бесплатная консультация с топовым преподавателем ELC</li>
+        <li><img src="images/lightning_icon.png" alt="">Составим план обучения</li>
+      </ul>
+    </div>
+  </section>
+  <div class="form-container">
+    <h2>Запишитесь на 1 бесплатный урок<br>+консультация</h2>
+    <form id="tg-form">
+      <input type="text" id="name" placeholder="Имя" required />
+      <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" value="+7 " required />
+      <button type="submit">Хочу на 1 бесплатный урок</button>
+    </form>
+  </div>
+  <script src="https://unpkg.com/imask"></script>
+  <script>
+    const phoneMask = IMask(document.getElementById('phone'), {
+      mask: '+{7} (000) 000-00-00'
+    });
+
+    document.getElementById('tg-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = `📩 Новая заявка:%0A👤 Имя: ${name}%0A📞 Телефон: ${phone}`;
+      const token = '7660930209:AAHx2T9toG1LID97XAlB8Ha1FOgeVfa53lM';
+      const chat_id = '80267795';
+      const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${message}`;
+      try {
+        await fetch(url);
+        alert("Заявка отправлена!");
+        document.getElementById('tg-form').reset();
+      } catch (error) {
+        alert("Ошибка при отправке. Попробуйте ещё раз.");
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+</html>
