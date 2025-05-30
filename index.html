@@ -1,247 +1,235 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ELC | Быстрый английский</title>
-  <style>
-    @font-face {
-      font-family: 'Gilroy Regular';
-      src: url('fonts/Gilroy-Regular.ttf') format('truetype');
-    }
-    @font-face {
-      font-family: 'Gilroy Semibold';
-      src: url('fonts/Gilroy-Semibold.ttf') format('truetype');
-    }
-    @font-face {
-      font-family: 'Gilroy Bold';
-      src: url('fonts/Gilroy-Bold.ttf') format('truetype');
-    }
 
-    * {
-      box-sizing: border-box;
-    }
+  <!-- Шрифты Gilroy -->
+<style>
+  @font-face {
+    font-family: 'Gilroy Regular';
+    src: url('fonts/Gilroy-Regular.ttf') format('truetype');
+  }
 
-    body {
-      margin: 0;
-      font-family: 'Gilroy Regular', sans-serif;
-      background-color: #ffffff;
-      -webkit-font-smoothing: antialiased;
-    }
+  @font-face {
+    font-family: 'Gilroy Semibold';
+    src: url('fonts/Gilroy-Semibold.ttf') format('truetype');
+  }
 
-    .container {
-      padding: 0 16px;
-    }
+  @font-face {
+    font-family: 'Gilroy Bold';
+    src: url('fonts/Gilroy-Bold.ttf') format('truetype');
+  }
 
-    header {
-      background-color: white;
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-    }
+  body {
+    margin: 0;
+    font-family: 'Gilroy Regular', sans-serif;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    header img {
-      height: 44px;
-    }
+  header {
+    background-color: white;
+    padding: 7px 14px;
+    display: flex;
+    align-items: center;
+  }
 
+  header img {
+    height: 44px;
+  }
+
+  .hero {
+    position: relative;
+    background-color: #2184f9;
+    overflow: hidden;
+    padding: 20px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+
+  .hero::before {
+    content: "";
+    background: url('images/hero_bg.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.25;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+
+  .hero__overlay {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .hero__badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: 'Gilroy Regular', sans-serif;
+  }
+
+  .badge img {
+    height: 16px;
+    margin-right: 6px;
+  }
+
+  .logo-2gis {
+    height: 10px;
+    margin-left: 6px;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    font-family: 'Gilroy Bold', sans-serif;
+  }
+
+  .hero__features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 640px;
+  }
+
+  .hero__features li {
+    font-size: 15px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    color: white;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+    font-family: 'Gilroy Regular', sans-serif;
+  }
+
+  .hero__features li img {
+    height: 18px;
+    margin-right: 10px;
+  }
+
+.form-container {
+  max-width: 500px;
+  margin: -20px auto 10px;
+  background: white;
+  border-radius: 24px;
+  padding: 12px 20px 20px;
+  z-index: 3;
+  position: relative;
+}
+  .form-wrapper {
+  background: #f4f4f4;
+  padding: 0 0px 20px;
+  margin-top: -20px;
+}
+  .form-container h2 {
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #222;
+    text-align: left;
+    line-height: 1.4;
+    font-family: 'Gilroy Semibold', sans-serif;
+    padding-left: 0px;
+  }
+
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .form-container input {
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    font-size: 18px;
+    margin: 0;
+    border: none;
+    border-radius: 12px;
+    background: #f2f2f2;
+    box-sizing: border-box;
+    font-family: 'Gilroy Regular', sans-serif;
+    color: #838383;
+  }
+
+  .form-container input::placeholder {
+    color: #999999;
+    opacity: 1;
+  }
+
+  .form-container button {
+    width: 100%;
+    padding: 14px;
+    background: #FAC748;
+    color: black;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: 'Gilroy Semibold', sans-serif;
+  }
+
+  @media (max-width: 768px) {
     .hero {
-      position: relative;
-      background-color: #2184f9;
-      overflow: hidden;
-      padding: 24px 16px 20px;
+      height: auto;
+      padding: 40px 24px;
     }
 
     .hero::before {
-      content: "";
-      background: url('images/hero_bg.png') no-repeat center center;
+      background-position: center top;
       background-size: cover;
-      opacity: 0.25;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 0;
-    }
-
-    .hero__overlay {
-      position: relative;
-      z-index: 1;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .hero__badges {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      background-color: rgba(255, 255, 255, 0.15);
-      padding: 6px 12px;
-      border-radius: 16px;
-      font-size: 11px;
-      color: #fff;
-      display: flex;
-      align-items: center;
-    }
-
-    .badge img {
-      height: 16px;
-      margin-right: 6px;
-    }
-
-    .logo-2gis {
-      height: 10px;
-      margin-left: 6px;
+      opacity: 0.2;
     }
 
     h1 {
-      font-size: 28px;
-      font-weight: 400;
-      margin-bottom: 20px;
-      color: #fff;
-      line-height: 1.2;
-      font-family: 'Gilroy Bold', sans-serif;
-    }
-
-    .hero__features {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+      font-size: 31px;
     }
 
     .hero__features li {
       font-size: 14px;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      color: white;
-      font-family: 'Gilroy Regular', sans-serif;
-    }
-
-    .hero__features li img {
-      height: 18px;
-      margin-right: 10px;
-    }
-
-    .form-wrapper {
-      background: #f4f4f4;
-      padding: 0 16px 24px;
-    }
-
-    .form-container {
-      max-width: 500px;
-      margin: -20px auto 0;
-      background: white;
-      border-radius: 24px;
-      padding: 16px 20px 20px;
     }
 
     .form-container h2 {
-      font-size: 17px;
-      font-weight: 400;
-      color: #222;
-      font-family: 'Gilroy Semibold', sans-serif;
-      margin-bottom: 14px;
-    }
-
-    .form-container form {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .form-container input {
-      width: 100%;
-      padding: 14px 16px;
       font-size: 16px;
-      border: none;
-      border-radius: 12px;
-      background: #f2f2f2;
-      color: #838383;
-      font-family: 'Gilroy Regular', sans-serif;
     }
-
-    .form-container button {
-      padding: 14px;
-      background: #FAC748;
-      color: black;
-      font-size: 18px;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      font-weight: 400;
-      font-family: 'Gilroy Semibold', sans-serif;
-    }
-
-    .consultation {
-      padding: 32px 16px;
-      background: #f4f4f4;
-    }
-
-    .consultation__title {
-      font-family: 'Gilroy Bold', sans-serif;
-      font-size: 25px;
-      font-weight: 400;
-      color: #1a1a1a;
-      margin-bottom: 20px;
-    }
-
-    .consultation__item {
-      background: white;
-      border-radius: 20px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .consultation__step {
-      font-family: 'Gilroy Semibold', sans-serif;
-      font-size: 17px;
-      margin-bottom: 16px;
-    }
-
-    .consultation__levels {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .level {
-      background: #e0e0e0;
-      border-radius: 20px;
-      padding: 4px 10px;
-      font-size: 9.25px;
-      display: flex;
-      align-items: center;
-      font-family: 'Gilroy Semibold', sans-serif;
-      gap: 6px;
-    }
-
-    .level img {
-      height: 20px;
-    }
-
-    @media (min-width: 768px) {
-      h1 {
-        font-size: 36px;
-      }
-      .hero__features li {
-        font-size: 16px;
-      }
-      .form-container h2 {
-        font-size: 20px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <header>
     <img src="images/ELC_logo.png" alt="ELC Logo">
   </header>
-
   <section class="hero">
     <div class="hero__overlay">
       <div class="hero__badges">
@@ -263,51 +251,57 @@
       </ul>
     </div>
   </section>
+<section class="form-wrapper">
+  <div class="form-container">
+    <h2>Запишитесь на 1 бесплатный урок<br>+консультация</h2>
+    <form id="tg-form">
+      <input type="text" id="name" placeholder="Имя" required />
+      <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required />
+      <button type="submit">Хочу на 1 бесплатный урок</button>
+    </form>
+  </div>
+</section>
+<section class="consultation" style="margin-top: -10px; padding-top: 5px; background: #f4f4f4;">
+  <h2 class="consultation__title">Что будет на консультации?</h2>
 
-  <section class="form-wrapper">
-    <div class="form-container">
-      <h2>Запишитесь на 1 бесплатный урок<br>+консультация</h2>
-      <form id="tg-form">
-        <input type="text" id="name" placeholder="Имя" required />
-        <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required />
-        <button type="submit">Хочу на 1 бесплатный урок</button>
-      </form>
-    </div>
-  </section>
-
-  <section class="consultation">
-    <h2 class="consultation__title">Что будет на консультации?</h2>
-
-    <div class="consultation__item">
-      <p class="consultation__step">1. Определим ваш уровень английского</p>
-      <div class="consultation__levels">
-        <div class="level"><img src="images/bag_emoji.png" alt="Beginner"><span>Beginner</span></div>
-        <div class="level"><img src="images/climbing_emoji.png" alt="Elementary"><span>Elementary</span></div>
-        <div class="level"><img src="images/intermediate.png" alt="Intermediate"><span>Intermediate</span></div>
+  <div class="consultation__item">
+    <p class="consultation__step">1. Определим ваш уровень английского</p>
+    <div class="consultation__levels">
+      <div class="level level--beginner">
+        <img src="images/bag_emoji.png" alt="Beginner">
+        <span>Beginner</span>
+      </div>
+      <div class="level level--elementary">
+        <img src="images/climbing_emoji.png" alt="Elementary">
+        <span>Elementary</span>
+      </div>
+      <div class="level level--intermediate">
+        <img src="images/intermediate.png" alt="Intermediate">
+        <span>Intermediate</span>
       </div>
     </div>
+  </div>
 
-    <div class="consultation__item">
-      <p class="consultation__step">2. Составим персональный план обучения</p>
-      <div class="consultation__progress">
-        <img src="images/flag_icon.png" class="start-icon" alt="flag">
-        <div class="progress-line">
-          <span class="dot green"></span>
-          <span class="dot blue"></span>
-          <span class="dot blue"></span>
-          <span class="dot blue"></span>
-        </div>
-        <img src="images/hero_avatar.png" class="avatar-icon" alt="avatar">
+  <div class="consultation__item">
+    <p class="consultation__step">2. Составим персональный план обучения</p>
+    <div class="consultation__progress">
+      <img src="images/flag_icon.png" class="start-icon" alt="flag">
+      <div class="progress-line">
+        <span class="dot green"></span>
+        <span class="dot blue"></span>
+        <span class="dot blue"></span>
+        <span class="dot blue"></span>
       </div>
+      <img src="images/hero_avatar.png" class="avatar-icon" alt="avatar">
     </div>
+  </div>
 
-    <div class="consultation__item">
-      <p class="consultation__step">3. Поможем выбрать цель</p>
-      <img src="images/mountain_emoji.png" alt="Цель" class="mountain-img">
-    </div>
-  </section>
-</body>
-</html>
+  <div class="consultation__item">
+    <p class="consultation__step">3. Поможем выбрать цель</p>
+    <img src="images/mountain_emoji.png" alt="Цель" class="mountain-img">
+  </div>
+</section>
+
 <style>
   .consultation {
     padding: 32px 20px;
