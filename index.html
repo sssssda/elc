@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -137,20 +136,22 @@
     margin-right: 10px;
   }
 
-.form-container {
-  max-width: 500px;
-  margin: -20px auto 10px;
-  background: white;
-  border-radius: 24px;
-  padding: 12px 20px 20px;
-  z-index: 3;
-  position: relative;
-}
   .form-wrapper {
-  background: #f4f4f4;
-  padding: 0 0px 0px;
-  margin-top: -20px;
-}
+    background: #f4f4f4;
+    padding: 0;
+    margin-top: -20px;
+  }
+
+  .form-container {
+    max-width: 500px;
+    margin: -20px auto 10px;
+    background: white;
+    border-radius: 24px;
+    padding: 12px 20px 20px;
+    z-index: 3;
+    position: relative;
+  }
+
   .form-container h2 {
     font-size: 17px;
     font-weight: 400;
@@ -159,7 +160,6 @@
     text-align: left;
     line-height: 1.4;
     font-family: 'Gilroy Semibold', sans-serif;
-    padding-left: 0px;
   }
 
   .form-container form {
@@ -200,109 +200,6 @@
     font-family: 'Gilroy Semibold', sans-serif;
   }
 
-  @media (max-width: 768px) {
-    .hero {
-      height: auto;
-      padding: 40px 24px;
-    }
-
-    .hero::before {
-      background-position: center top;
-      background-size: cover;
-      opacity: 0.2;
-    }
-
-    h1 {
-      font-size: 31px;
-    }
-
-    .hero__features li {
-      font-size: 14px;
-    }
-
-    .form-container h2 {
-      font-size: 16px;
-    }
-  }
-</style>
-</head>
-<body>
-  <header>
-    <img src="images/ELC_logo.png" alt="ELC Logo">
-  </header>
-  <section class="hero">
-    <div class="hero__overlay">
-      <div class="hero__badges">
-        <div class="badge">
-          <img src="images/heart_icon.png" alt="Heart">
-          <span>10.000+ выпускников</span>
-        </div>
-        <div class="badge">
-          <img src="images/star_icon.png" alt="Star">
-          <span>4.9 из 5</span>
-          <img src="images/2GIS_logo.png" alt="2GIS" class="logo-2gis">
-        </div>
-      </div>
-      <h1>Быстрый английский<br>за 2 месяца</h1>
-      <ul class="hero__features">
-        <li><img src="images/lightning_icon.png" alt="">Гарантия результата: +1 уровень за 2 месяца</li>
-        <li><img src="images/lightning_icon.png" alt="">Бесплатная консультация с топовым преподавателем ELC</li>
-        <li><img src="images/lightning_icon.png" alt="">Составим план обучения</li>
-      </ul>
-    </div>
-  </section>
-<section class="form-wrapper">
-  <div class="form-container">
-    <h2>Запишитесь на 1 бесплатный урок<br>+консультация</h2>
-    <form id="tg-form">
-      <input type="text" id="name" placeholder="Имя" required />
-      <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required />
-      <button type="submit">Хочу на 1 бесплатный урок</button>
-    </form>
-  </div>
-</section>
-<section class="consultation" style="padding-top: 5px; background: #f4f4f4;">
-  <h2 class="consultation__title">Что будет на консультации?</h2>
-
-  <div class="consultation__item">
-    <p class="consultation__step">1. Определим ваш уровень английского</p>
-    <div class="consultation__levels">
-      <div class="level level--beginner">
-        <img src="images/bag_emoji.png" alt="Beginner">
-        <span>Beginner</span>
-      </div>
-      <div class="level level--elementary">
-        <img src="images/climbing_emoji.png" alt="Elementary">
-        <span>Elementary</span>
-      </div>
-      <div class="level level--intermediate">
-        <img src="images/intermediate.png" alt="Intermediate">
-        <span>Intermediate</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="consultation__item">
-    <p class="consultation__step">2. Составим персональный план обучения</p>
-    <div class="consultation__progress">
-      <img src="images/flag_icon.png" class="start-icon" alt="flag">
-      <div class="progress-line">
-        <span class="dot green"></span>
-        <span class="dot blue"></span>
-        <span class="dot blue"></span>
-        <span class="dot blue"></span>
-      </div>
-      <img src="images/hero_avatar.png" class="avatar-icon" alt="avatar">
-    </div>
-  </div>
-
-  <div class="consultation__item">
-    <p class="consultation__step">3. Поможем выбрать цель</p>
-    <img src="images/mountain_emoji.png" alt="Цель" class="mountain-img">
-  </div>
-</section>
-
-<style>
   .consultation {
     padding: 10px 25px 48px;
     background: #f4f4f4;
@@ -318,20 +215,22 @@
     margin-bottom: 10px;
     text-align: left;
     padding-left: 4px;
+    margin-top: 20px;
   }
 
-.consultation__item {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 16px;
-  margin-bottom: 16px;
-  min-height: 85px;
-}
+  .consultation__item {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    min-height: 85px;
+  }
 
   .consultation__step {
     font-family: 'Gilroy Semibold', sans-serif;
     font-size: 17px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    padding-left: 4px;
   }
 
   .consultation__levels {
