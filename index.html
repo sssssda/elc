@@ -255,7 +255,7 @@
       <button type="submit">Хочу на 1 бесплатный урок</button>
     </form>
   </div>
-<section class="consultation">
+<section class="consultation" style="margin-top: 0; padding-top: 20px; background: #f4f4f4;">
   <h2 class="consultation__title">Что будет на консультации?</h2>
 
   <div class="consultation__item">
@@ -292,9 +292,7 @@
 
   <div class="consultation__item">
     <p class="consultation__step">3. Поможем выбрать цель</p>
-    <div class="goal">
-      <img src="images/mountain_emoji.png" alt="Цель" class="mountain-img">
-    </div>
+    <img src="images/mountain_emoji.png" alt="Цель" class="mountain-img">
   </div>
 </section>
 
@@ -306,9 +304,8 @@
 
   .consultation__title {
     font-family: 'Gilroy Bold', sans-serif;
-    font-size: 23px;
+    font-size: 25px;
     margin-bottom: 28px;
-    white-space: nowrap;
   }
 
   .consultation__item {
@@ -328,7 +325,6 @@
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    justify-content: center;
   }
 
   .level {
@@ -342,18 +338,20 @@
     gap: 6px;
   }
 
-  .level img {
-    height: 20px;
+  .level--beginner {
+    transform: rotate(-8deg) translateY(6px);
   }
 
-  .level--beginner {
-    transform: rotate(-6deg) translateY(8px);
-  }
   .level--elementary {
-    transform: rotate(2deg) translateY(-4px);
+    transform: rotate(-4deg) translateY(2px);
   }
+
   .level--intermediate {
-    transform: rotate(8deg) translateY(-8px);
+    transform: rotate(5deg) translateY(-4px);
+  }
+
+  .level img {
+    height: 20px;
   }
 
   .consultation__progress {
@@ -369,18 +367,18 @@
   }
 
   .avatar-icon {
-    height: 30px;
-    width: 30px;
+    height: 32px;
     border-radius: 50%;
     position: absolute;
-    left: 42px;
-    top: -12px;
+    left: 44px;
+    top: -14px;
+    z-index: 2;
   }
 
   .progress-line {
     display: flex;
     align-items: center;
-    gap: 26px;
+    gap: 16px;
     flex: 1;
     padding: 0 16px;
     position: relative;
@@ -390,7 +388,6 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    z-index: 2;
   }
 
   .green {
@@ -404,23 +401,20 @@
   .consultation__item .progress-line::before {
     content: "";
     height: 3px;
-    width: 100%;
+    flex: 1;
     background: linear-gradient(to right, #72e375 25%, #b4c4de 25%);
     position: absolute;
+    left: 16px;
+    right: 16px;
     top: 50%;
-    left: 0;
     transform: translateY(-50%);
     z-index: 1;
   }
 
-  .goal {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 12px;
-  }
-
   .mountain-img {
-    height: 76px;
+    height: 80px;
+    margin-top: 8px;
+    float: right;
   }
 </style>
   <script src="https://unpkg.com/imask"></script>
