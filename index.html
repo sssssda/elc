@@ -29,6 +29,10 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  .container {
+    padding: 0 20px;
+  }
+
   header {
     background-color: white;
     padding: 7px 14px;
@@ -136,20 +140,22 @@
     margin-right: 10px;
   }
 
-.form-container {
-  max-width: 500px;
-  margin: -20px auto 10px;
-  background: white;
-  border-radius: 24px;
-  padding: 12px 20px 20px;
-  z-index: 3;
-  position: relative;
-}
+  .form-container {
+    max-width: 500px;
+    margin: -20px auto 10px;
+    background: white;
+    border-radius: 24px;
+    padding: 12px 20px 20px;
+    z-index: 3;
+    position: relative;
+  }
+
   .form-wrapper {
-  background: #f4f4f4;
-  padding: 0 0px 20px;
-  margin-top: -20px;
-}
+    background: #f4f4f4;
+    padding: 0 0px 20px;
+    margin-top: -20px;
+  }
+
   .form-container h2 {
     font-size: 17px;
     font-weight: 400;
@@ -226,11 +232,11 @@
 </style>
 </head>
 <body>
-  <header>
+  <header class="container">
     <img src="images/ELC_logo.png" alt="ELC Logo">
   </header>
   <section class="hero">
-    <div class="hero__overlay">
+    <div class="hero__overlay container">
       <div class="hero__badges">
         <div class="badge">
           <img src="images/heart_icon.png" alt="Heart">
@@ -250,19 +256,21 @@
       </ul>
     </div>
   </section>
-<section class="form-wrapper">
-  <div class="form-container">
-    <h2>Запишитесь на 1 бесплатный урок<br>+консультация</h2>
-    <form id="tg-form">
-      <input type="text" id="name" placeholder="Имя" required />
-      <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required />
-      <button type="submit">Хочу на 1 бесплатный урок</button>
-    </form>
-  </div>
-</section>
-<section class="consultation" style="margin-top: -10px; padding-top: 5px; background: #f4f4f4;">
-  <h2 class="consultation__title">Что будет на консультации?</h2>
-
+  <section class="form-wrapper container">
+    <div class="form-container">
+      <h2>Запишитесь на 1 бесплатный урок<br>+консультация</h2>
+      <form id="tg-form">
+        <input type="text" id="name" placeholder="Имя" required />
+        <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required />
+        <button type="submit">Хочу на 1 бесплатный урок</button>
+      </form>
+    </div>
+  </section>
+  <section class="consultation container" style="margin-top: -10px; padding-top: 5px; background: #f4f4f4;">
+    <h2 class="consultation__title">Что будет на консультации?</h2>
+  </section>
+</body>
+</html>
   <div class="consultation__item">
     <p class="consultation__step">1. Определим ваш уровень английского</p>
     <div class="consultation__levels">
